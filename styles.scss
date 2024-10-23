@@ -1,0 +1,138 @@
+@forward 'boiler';
+@import 'variables';
+@import 'mixins';
+
+.header {
+    background-color: $bg-header-color;
+    @include padding(20px, 0);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    
+    &__logo{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+
+
+    }
+  
+    // &__logo {
+    // //   font-size: 24px;
+    // //   color: $white-color;
+    // //   max-width: 100%;
+    // //   @include font-family('Helvetica', bold);
+    // max-width: 100%;
+    // object-fit: cover;
+    // }
+  
+    &__nav {
+      margin-top: 10px;
+  
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+  
+        li {
+          margin: 0 10px;
+  
+          a {
+            text-decoration: none;
+            color: $white-color;
+            font-weight: bold;
+  
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  main{
+    background-color: $bg-main-color;
+
+  }
+  .content {
+    @include padding(30px);
+    height: 100%;
+
+    width: 1200px;
+
+    margin-inline: auto;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:1rem;
+
+      @media (width <= 920px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width <= 700px) {
+      grid-template-columns: 1fr;
+    }
+
+  
+    &__card {
+      background-color: $card-bg-color;
+      @include box-shadow;
+      // @include padding(20px);
+      padding: 20px;
+      // width: 250px;
+      border-radius: 10px;
+
+    //   &__image{
+    //     width: 100%;
+    //     height: auto;
+    //     border-radius: 8px;
+    //     margin-bottom: 15px;
+    //     @include box-shadow(0px, 2px, 4px, rgba(0, 0, 0, 0.2));
+    //     max-width: 100%;
+    //   }
+  
+      &__title {
+        font-size: 20px;
+        font-weight: bold;
+        @include margin(0, 0, 10px);
+        color: $primary-color;
+      }
+  
+      &__description {
+        font-size: 16px;
+        @include margin(0, 0, 15px);
+        color: $text-color;
+        font-style: oblique;
+        font-weight: bolder;
+      }
+  
+      button {
+        background-color: $primary-color;
+        border: none;
+        color: none;
+        justify-content: center;
+        @include padding(10px, 15px);
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bolder;
+  
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+  
+  footer {
+    background-color: $bg-footer-color;
+    @include padding(10px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+  
+    p {
+      color: $white-color;
+      @include font-family('Verdana', normal);
+    }
+  }
